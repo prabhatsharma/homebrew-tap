@@ -5,21 +5,21 @@
 class Opentelemetry1 < Formula
   desc "A sample open telemetry instrumented application"
   homepage "https://github.com/prabhatsharma/opentelemetry1"
-  version "0.4.0"
+  version "0.4.1"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/prabhatsharma/open-telemetry1/releases/download/v0.4.0/opentelemetry1_0.4.0_Darwin_x86_64.tar.gz"
-      sha256 "e8ea38356f06230339752cfb96cf929ffecda8039c39a838b8c08a737e0e0a86"
+      url "https://github.com/prabhatsharma/open-telemetry1/releases/download/v0.4.1/opentelemetry1_0.4.1_Darwin_x86_64.tar.gz"
+      sha256 "b93ff3d81a68414099de2747a46e3c1d2cbc30ec0f3c752fc86d4290330bd768"
 
       def install
         bin.install "opentelemetry1"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/prabhatsharma/open-telemetry1/releases/download/v0.4.0/opentelemetry1_0.4.0_Darwin_arm64.tar.gz"
-      sha256 "690b7f8f287f9b23677f347991c899e63c8afd8d67839b545f49323c06e83fca"
+      url "https://github.com/prabhatsharma/open-telemetry1/releases/download/v0.4.1/opentelemetry1_0.4.1_Darwin_arm64.tar.gz"
+      sha256 "8027b2c505a26c91ffc9c820ff6a6cd195314bd55fb89420d9ed9aafb603a751"
 
       def install
         bin.install "opentelemetry1"
@@ -29,24 +29,24 @@ class Opentelemetry1 < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/prabhatsharma/open-telemetry1/releases/download/v0.4.0/opentelemetry1_0.4.0_Linux_armv6.tar.gz"
-      sha256 "d7f6bdcb591f4f70ecb9be7d527a0b515940a8c2feb2051e95d433023d165b64"
-
-      def install
-        bin.install "opentelemetry1"
-      end
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/prabhatsharma/open-telemetry1/releases/download/v0.4.0/opentelemetry1_0.4.0_Linux_arm64.tar.gz"
-      sha256 "ffecf46552f658ca48ab1a03ba4d0f5e63b805e1451419514cd3e733aa7af65a"
+      url "https://github.com/prabhatsharma/open-telemetry1/releases/download/v0.4.1/opentelemetry1_0.4.1_Linux_armv6.tar.gz"
+      sha256 "c75011e9ccf98af6e0cb3ebb970341469c95549ccef5425d6b202064a99ed1ea"
 
       def install
         bin.install "opentelemetry1"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/prabhatsharma/open-telemetry1/releases/download/v0.4.0/opentelemetry1_0.4.0_Linux_x86_64.tar.gz"
-      sha256 "9ba3a8901b1032157e24204d78e5bb88622e999dc60c36cc80be6ab918ad8b5f"
+      url "https://github.com/prabhatsharma/open-telemetry1/releases/download/v0.4.1/opentelemetry1_0.4.1_Linux_x86_64.tar.gz"
+      sha256 "c5cc8f642a2a6b7438ec17accab1a1264a6ee37746cc6577091fb6f9f7f5dd2f"
+
+      def install
+        bin.install "opentelemetry1"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/prabhatsharma/open-telemetry1/releases/download/v0.4.1/opentelemetry1_0.4.1_Linux_arm64.tar.gz"
+      sha256 "b822323ae8fb64d03bbd54dfb7de9e94d23c8512152ce7c3c50a50d67725f0b7"
 
       def install
         bin.install "opentelemetry1"
