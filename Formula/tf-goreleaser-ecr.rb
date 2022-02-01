@@ -6,21 +6,21 @@ class TfGoreleaserEcr < Formula
   desc "tf-goreleaser-ecr is a sample CI/CD pipeline using Terraform and goreleaser
 "
   homepage "https://github.com/prabhatsharma/tf-goreleaser-ecr"
-  version "0.0.11"
+  version "0.0.15"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/prabhatsharma/tf-goreleaser-ecr/releases/download/v0.0.11/tf-goreleaser-ecr_0.0.11_Darwin_arm64.tar.gz"
-      sha256 "86b2382579416501fded8b7f38c9f726be728cf6a1697a9a1d97ce0811033bbf"
+      url "https://github.com/prabhatsharma/tf-goreleaser-ecr/releases/download/v0.0.15/tf-goreleaser-ecr_0.0.15_Darwin_arm64.tar.gz"
+      sha256 "e3720b48454726fa7322cc0172bd03302f0cfc52dddbed675d6e5e3e1aea943f"
 
       def install
         bin.install "tf-goreleaser-ecr"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/prabhatsharma/tf-goreleaser-ecr/releases/download/v0.0.11/tf-goreleaser-ecr_0.0.11_Darwin_x86_64.tar.gz"
-      sha256 "e299e5b2db443632e151a1b9562f296802ad8f25d902a1fcba5a8901c85d66e4"
+      url "https://github.com/prabhatsharma/tf-goreleaser-ecr/releases/download/v0.0.15/tf-goreleaser-ecr_0.0.15_Darwin_x86_64.tar.gz"
+      sha256 "43310b110755961e787a7648ce208ab3dabca21deb292b238b4f8517654da392"
 
       def install
         bin.install "tf-goreleaser-ecr"
@@ -29,25 +29,25 @@ class TfGoreleaserEcr < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/prabhatsharma/tf-goreleaser-ecr/releases/download/v0.0.15/tf-goreleaser-ecr_0.0.15_Linux_arm64.tar.gz"
+      sha256 "e19c11e10625c5a53ddd27c4249bb2f7fc7e9a155c9a87810dc28e70c9126258"
+
+      def install
+        bin.install "tf-goreleaser-ecr"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/prabhatsharma/tf-goreleaser-ecr/releases/download/v0.0.11/tf-goreleaser-ecr_0.0.11_Linux_x86_64.tar.gz"
-      sha256 "aecd8c36e894bc0adff6c965c2e8b5702d82ee563419dd14cc78506e39327ce7"
+      url "https://github.com/prabhatsharma/tf-goreleaser-ecr/releases/download/v0.0.15/tf-goreleaser-ecr_0.0.15_Linux_x86_64.tar.gz"
+      sha256 "56d292e454cacbf97ac607aa85acbbaf86ef9b62ee5ba19dbe29d8c522c4355b"
 
       def install
         bin.install "tf-goreleaser-ecr"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/prabhatsharma/tf-goreleaser-ecr/releases/download/v0.0.11/tf-goreleaser-ecr_0.0.11_Linux_armv6.tar.gz"
-      sha256 "ac7105f435ce0068db9f1411ea3ffaf6b2ce5a2204d0bd4fee4a3bff366cefe4"
-
-      def install
-        bin.install "tf-goreleaser-ecr"
-      end
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/prabhatsharma/tf-goreleaser-ecr/releases/download/v0.0.11/tf-goreleaser-ecr_0.0.11_Linux_arm64.tar.gz"
-      sha256 "baaedb32745c27b6e0d70aae660ea934e0694cfeae49c2dc30bb36bb3b1d51ce"
+      url "https://github.com/prabhatsharma/tf-goreleaser-ecr/releases/download/v0.0.15/tf-goreleaser-ecr_0.0.15_Linux_armv6.tar.gz"
+      sha256 "dd80450f21a0d6b64bfc765013f4413d3e9d2cfda0bc0eef9cb3cc0edb0e3f6f"
 
       def install
         bin.install "tf-goreleaser-ecr"
